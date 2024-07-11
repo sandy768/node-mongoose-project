@@ -1,0 +1,31 @@
+<%-include('../includes/header.ejs')%>
+<link rel="stylesheet" href="/css/userSingle.css">
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs')%>
+    <main>
+      <h1 class="text-center text-light my-4">Product Details</h1>
+        <div class="d-flex justify-content-center align-item-center">
+            <div class="card mb-5 mx-3 my-2 bg-info-subtle" style="max-width: 700px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://freerangestock.com/sample/61264/online-shopping--laptop-to-shopping-cart.jpg" class="img-fluid rounded-start py-4 px-2 mx-2" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body text-secondary-emphasis py-4 mx-3">
+                      <h5 class="card-title"><%=data.product_name%></h5>
+                      <p class="card-text"><%=data.product_price%></p>
+                      <p class="card-text"><%=data.product_color%></p>
+                      <p class="card-text"><small class="text-body-secondary"><%=data.product_description%></small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+    <!-- <%-include('../includes/footer.ejs')%> -->
+
+    

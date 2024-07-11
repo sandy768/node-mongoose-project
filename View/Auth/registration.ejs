@@ -1,0 +1,59 @@
+<%-include('../includes/header.ejs')%>
+<link rel="stylesheet" href="/css/authRegistration.css">
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs')%>
+    <main>
+        <div class="register row">
+            <h1 class="text-center text-success fw-bold mt-5">Registration Form</h1>
+            <form action="/auth/postdata" method="POST" class="row g-3 my-2" autocomplete="off" enctype="multipart/form-data">
+                <div>
+                    <%if(errorEmail){%>
+                        <p class="text-danger fw-semibold fs-5 px-3">*<%=errorEmail%></p>
+                    <%}%>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="fname" class="form-label fw-bold px-3">First Name </label>
+                  <input type="text" class="form-control mx-2" id="fname" name="fname" placeholder="Enter your First Name">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="lname" class="form-label fw-bold">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your Last Name">
+                </div>
+                <div class="mb-3 col-12">
+                    <label for="gender" class="px-3 fw-bold">Gender</label><br>
+                        <input type="radio" name="gender" id="gender" class="form-check-input mx-3" value="male">Male
+                        <input type="radio" name="gender" id="gender" class="form-check-input mx-2" value="female">Female
+                        <input type="radio" name="gender" id="gender" class="form-check-input mx-2" value="others">Others
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="email" class="form-label fw-bold px-3">Email</label>
+                    <input type="email" name="email" id="email" class="form-control mx-2" placeholder="Enter your Email Id">
+                </div>   
+                <div class="mb-3 col-md-6">
+                    <label for="password" class="form-label fw-bold">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="cnfpass" class="form-label fw-bold px-3">Confirm Password</label>
+                    <input type="password" name="cnfpass" id="cnfpass" class="form-control mx-2" placeholder="Confirm your Password">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="user_image" class="form-label fw-bold px-3">Photo Upload</label>
+                    <input type="file" name="user_image" id="user_image" class="form-control ms-2 me-2">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="user_docs" class="form-label fw-bold px-3">Document Upload</label>
+                    <input type="file" name="user_docs" id="user_docs" class="form-control mx-2">
+                </div>
+                <div class="mt-5 mb-5 d-flex gap-2 justify-content-center">
+                    <input type="submit" value="Register" class="btn btn-lg btn-success">
+                    <input type="reset" value="Reset" class="btn btn-lg btn-danger">
+                </div>
+            </form>
+        </div>
+    </main>
+<%-include('../includes/footer.ejs')%>

@@ -1,0 +1,32 @@
+<%-include('../includes/header.ejs')%>
+<link rel="stylesheet" href="/css/userView.css">
+<title>
+    <%=title%>
+</title>
+<body>
+    <%-include('../includes/navbar.ejs')%>
+    <main>
+        <%if(data.length>0){%>
+            <h1 class="text-center text-warning my-4">User Products</h1>
+            <%for(let i in data){%>
+                <div class="ms-4 my-5 d-flex d-inline-flex">
+                    <div class="card" style="width: 18rem; height: 20rem;">
+                        <img src="https://www.cleverfiles.com/howto/wp-content/uploads/2018/03/minion.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-success-subtle text-secondary-emphasis">
+                          <h5 class="card-title text-center"><%=data[i].product_name%></h5>
+                          <p class="card-text text-center"><b>Price: </b><%=data[i].product_price%></p>
+                          <div>
+                            <a href="/user/productDetails/<%=data[i]._id%>" class="btn bg-success text-light">Product Details</a>
+                        </div>
+                        <div>
+                            <a href="/user/delete/<%=data[i]._id%>" class="btn bg-danger text-light">Delete</a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+                <%}%>
+        <%}else{%>
+            <h2>Content not found</h2>
+        <%}%>
+    </main>
+    <%-include('../includes/footer.ejs')%>

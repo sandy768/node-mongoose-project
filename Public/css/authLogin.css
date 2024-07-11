@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148881320.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.login{
+    height: auto;
+    width: 400px;
+    margin-left: 450px;
+    margin-top: 50px;
+    margin-bottom: 110px;
+    background-color: transparent;
+    border: 1px solid white;
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+}

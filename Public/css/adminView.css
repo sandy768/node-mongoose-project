@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/premium-photo/toy-shopping-cart-with-boxes-blue-background_339191-217.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712534400&semt=ais);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.deletepost{
+    position: relative;
+}
+.deletepost i{
+    position: absolute;
+    left: 12px;
+    /* right:3px; */
+    top: 13px;
+}
+.fa-solid{
+    color: white;
+}
+.btn1{
+    width: 88px;
+    height: 41px;
+    padding-left: 29px;
+}

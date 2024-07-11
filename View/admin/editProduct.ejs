@@ -1,0 +1,31 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/addProduct.css">
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%- include('../includes/navbar.ejs') %>
+    <main>
+        <h2 class="phead">Update Product</h2>
+        <div class="product1">
+            <form action="/admin/newData" method="POST" enctype="multipart/form-data">
+                <!-- <label for="pid" class="ptitle">Product Id</label> -->
+                <input type="hidden" name="pid" value="<%=data._id%>">
+                <label for="pname" class="ptitle">Product Name</label>
+                <input type="text" name="pname" id="pname" value="<%=data.product_name%>"><br><br>
+                <label for="pprice" class="ptitle">Product Price</label>
+                <input type="text" name="pprice" id="pprice" value="<%=data.product_price%>"><br><br>
+                <label for="pcolor" class="ptitle">Product Color</label>
+                <input type="text" name="pcolor" id="pcolor" value="<%=data.product_color%>"><br><br>
+                <label for="pdescription" class="ptitle">Product Description</label>
+                <input type="text" name="pdescription" id="pdescription" value="<%=data.product_description%>"><br><br>
+                <label for="product_image" class="ptitle">Upload Images</label> <img src="/<%=data.product_image[0]%>" alt="..." height="60px"> <img src="/<%=data.product_image[1]%>" alt="..." height="60px"><br><br>
+                <input type="file" name="product_image" id="product_image" multiple><br><br>
+                <div class="mx-4 mb-5">
+                    <input type="submit" value="Update Product" class="btn btn-primary btn-lg mt-4">
+                </div>  
+            </form>
+        </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>

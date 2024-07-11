@@ -1,0 +1,65 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/addProduct.css">
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%- include('../includes/navbar.ejs') %>
+    <main>
+        <h2 class="phead">Product Registration</h2>
+        <div class="product">
+            <form action="/admin/postData" method="POST" enctype="multipart/form-data" autocomplete="off">
+                
+                <!-- <label for="pid" class="ptitle">Product Id</label>
+                <input type="text" name="pid" id="pid"><br><br> -->
+
+                <div class="mx-4 mb-3">
+                    <%if(frontError.length>0){%>
+                        <%for(let err of frontError){%>
+                            <div><h6 style="color: red;">* <%=err.msg%></h6></div>
+                        <%}%>
+                    <%}%>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pname" class="ptitle">Product Name</label>
+                    <input type="text" name="pname" id="pname" placeholder="Enter Product Name" value="<%=formData.pname%>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pprice" class="ptitle">Product Price</label>
+                    <input type="number" name="pprice" id="pprice" placeholder="Enter Product Price in ₹" value="<%=formData.pprice%>">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pcolor" class="ptitle">Product Color</label>
+                    <select name="pcolor" id="pcolor">
+                        <option value="1">---Please Select---</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="white">White</option>
+                        <option value="black">Black</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pdescription" class="ptitle">Product Description</label>
+                    <input type="text" name="pdescription" id="pdescription" placeholder="Enter Product Description" value="<%=formData.pdescription%>">
+                </div>
+                
+                <!-- <label for="product_image" class="ptitle">Product Image</label>
+                <input type="file" name="product_image" id="product_image"> -->
+                
+                <div class="mb-3">
+                    <label for="product_image" class="ptitle">Product Images (Upto Two Files)</label>
+                    <input type="file" name="product_image" id="product_image" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <input type="submit" value="Add Product" class="padd">
+                </div>
+            </form>
+        </div>
+    </main>
+    <%-include('../includes/footer.ejs')%>
